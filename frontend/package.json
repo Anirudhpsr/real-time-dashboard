@@ -1,0 +1,25 @@
+{
+  "name": "real-time-dashboard",
+  "version": "1.0.0",
+  "description": "A real-time dashboard application using React.js for the frontend and FastAPI for the backend.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1",
+    "socket.io-client": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-plugin-react": "^7.27.0"
+  },
+  "homepage": ".",
+  "license": "MIT"
+}

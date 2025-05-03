@@ -1,10 +1,10 @@
-FROM node:14
+FROM node:18-alpine as frontend
 
 # Set the working directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package.json package-lock.json ./
+COPY package*.json ./
 
 # Install dependencies, including lucide-react
 RUN npm install lucide-react
