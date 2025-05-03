@@ -7,6 +7,8 @@ This project is a full-stack application that provides a real-time dashboard dis
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
 - [Running the Application](#running-the-application)
+- [Running Test Cases](#running-test-cases)
+- [Sending Messages to WebSocket](#sending-messages-to-websocket)
 - [Technical Choices](#technical-choices)
 - [Assumptions and Limitations](#assumptions-and-limitations)
 - [AI Tools Used](#ai-tools-used)
@@ -21,29 +23,9 @@ This project is a full-stack application that provides a real-time dashboard dis
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Anirudhpsr/real-time-dashboard.git
    cd real-time-dashboard
    ```
-
-2. **Frontend Setup**
-   - Navigate to the `frontend` directory:
-     ```bash
-     cd frontend
-     ```
-   - Install dependencies:
-     ```bash
-     npm install
-     ```
-
-3. **Backend Setup**
-   - Navigate to the `backend` directory:
-     ```bash
-     cd ../backend
-     ```
-   - Install dependencies:
-     ```bash
-     pip install -r requirements.txt
-     ```
 
 ## Running the Application
 
@@ -55,6 +37,46 @@ To run the entire application stack, use Docker Compose:
    docker-compose up --build
    ```
 3. Access the frontend application at `http://localhost:3000`.
+
+## Running Test Cases
+
+### Backend Test Cases
+1. First, install the required dependencies:
+   ```bash
+   pip install fastapi httpx pytest
+   ```
+2. Run the backend test cases using `pytest`:
+   ```bash
+   pytest .\backend\tests\test_main.py
+   ```
+
+### Frontend Test Cases
+To run the frontend test cases:
+1. Install `react-scripts` if not already installed:
+   ```bash
+   npm install react-scripts
+   ```
+2. Run the tests:
+   ```bash
+   npm test
+   ```
+
+## Sending Messages to WebSocket
+
+To send a message to the WebSocket, use Postman:
+
+1. Open Postman.
+2. Send a `POST` request to the following URL:
+   ```
+   http://localhost:8000/api/send-message
+   ```
+3. Use the following JSON body:
+   ```json
+   {
+       "value": "Testing Completed",
+       "status": 1
+   }
+   ```
 
 ## Technical Choices
 
@@ -73,5 +95,6 @@ To run the entire application stack, use Docker Compose:
 - AI tools were utilized to generate boilerplate code for the React components and FastAPI routes. 
 - Modifications were made to enhance functionality, such as adding error handling and improving the user interface.
 - The custom hook `useWebSocket` was generated with AI assistance and then refined to better manage WebSocket connections.
+- **Claude** was used to assist with frontend design, providing suggestions and improvements for the user interface.
 
 This README provides a comprehensive overview of the project, its setup, and its technical choices. For further details, please refer to the individual component and service documentation within the project.

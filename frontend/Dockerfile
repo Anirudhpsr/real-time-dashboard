@@ -6,11 +6,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies, including lucide-react
-RUN npm install lucide-react
-
-# Install dependencies
-RUN npm install
+# Install all dependencies (including lucide-react)
+RUN npm install --legacy-peer-deps
 
 # Copy the rest of the application code
 COPY . .
